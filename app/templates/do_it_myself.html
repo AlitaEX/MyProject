@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h3, h4, label, form {color: white;}
+    #list {color: white;}
+</style>
+{% endblock style %}
+<div class="row">
+    <div class="col-md-5">
+        <h3><b>店家：自己來紅茶鮮乳 (台中逢甲店)</b></h3>
+        <h4>地址：台中市西屯區逢甲路21號</h4>
+        <label>菜單查詢：</label><br>
+            <select id="menu" name="drink" size="10" multiple>
+                <optgroup label="鮮牛奶茶：">
+                  <option value="古早味紅茶鮮乳 - 35 (M)/55 (L)">古早味紅茶鮮乳&nbsp-&nbsp35 (M)/55 (L)
+                  <option value="經典味紅茶鮮乳 - 35 (M)/55 (L)">經典味紅茶鮮乳&nbsp-&nbsp35 (M)/55 (L)
+                  <option value="茶香綠茶鮮乳 - 35 (M)/55 (L)">茶香綠茶鮮乳&nbsp-&nbsp35 (M)/55 (L)
+                  <option value="黑糖冬瓜鮮乳 - 35 (M)/55 (L)">黑糖冬瓜鮮乳&nbsp-&nbsp35 (M)/55 (L)
+                  <option value="碳焙鮮乳 - 35 (M)/55 (L)">碳焙鮮乳&nbsp-&nbsp35 (M)/55 (L)
+                </optgroup>
+                <optgroup label="雙乳奶茶：">
+                    <option value="古早味紅茶牛羊乳 - 60">古早味紅茶牛羊乳&nbsp-&nbsp60
+                    <option value="經典味紅茶牛羊乳 - 60">經典味紅茶牛羊乳&nbsp-&nbsp60
+                </optgroup>
+                <optgroup label="黑糖珍珠：">
+                  <option value="鮮牛/羊奶茶+黑糖珍珠 - 60">鮮牛/羊奶茶+黑糖珍珠&nbsp-&nbsp60
+                  <option value="好茶系列+黑糖珍珠 - 40">好茶系列+黑糖珍珠&nbsp-&nbsp40
+                </optgroup>
+                <optgroup label="鮮羊奶茶：">
+                  <option value="古早味紅茶羊乳 - 40 (M)/60 (L)">古早味紅茶羊乳&nbsp-&nbsp40 (M)/60 (L)
+                  <option value="經典味紅茶羊乳 - 40 (M)/60 (L)">經典味紅茶羊乳&nbsp-&nbsp40 (M)/60 (L)
+                  <option value="茶香綠茶羊乳 - 40 (M)/60 (L)">茶香綠茶羊乳&nbsp-&nbsp40 (M)/60 (L)
+                  <option value="黑糖冬瓜羊乳 - 40 (M)/60 (L)">黑糖冬瓜羊乳&nbsp-&nbsp40 (M)/60 (L)
+                  <option value="碳焙烏龍羊乳 - 40 (M)/60 (L)">碳焙烏龍羊乳&nbsp-&nbsp40 (M)/60 (L)
+                </optgroup>
+                <optgroup label="好茶系列：">
+                  <option value="古早味紅茶 - 20 (M)/30 (L)">古早味紅茶&nbsp-&nbsp20 (M)/30 (L)
+                  <option value="茉香綠茶 - 20 (M)/30 (L)">茉香綠茶&nbsp-&nbsp20 (M)/30 (L)
+                  <option value="黑糖冬瓜茶 - 20 (M)/30 (L)">黑糖冬瓜茶&nbsp-&nbsp20 (M)/30 (L)
+                  <option value="仙草甘茶 - 20 (M)/30 (L)">仙草甘茶&nbsp-&nbsp20 (M)/30 (L)
+                  <option value="碳焙烏龍茶 - 20 (M)/30 (L)">碳焙烏龍茶&nbsp-&nbsp20 (M)/30 (L)
+                </optgroup>
+                <optgroup label="芝士厚奶蓋：">
+                  <option value="紅茶芝芝 - 60">紅茶芝芝&nbsp-&nbsp60
+                  <option value="綠茶芝芝 - 60">綠茶芝芝&nbsp-&nbsp60
+                  <option value="冬瓜芝芝 - 60">冬瓜芝芝&nbsp-&nbsp60
+                  <option value="仙草芝芝 - 60">仙草芝芝&nbsp-&nbsp60
+                </optgroup>
+                <optgroup label="鮮榨系列：">
+                  <option value="檸檬古早味紅茶 - 45">檸檬古早味紅茶&nbsp-&nbsp45
+                  <option value="檸檬經典味紅茶 - 45">檸檬經典味紅茶&nbsp-&nbsp45
+                  <option value="檸檬茉香綠茶 - 45">檸檬茉香綠茶&nbsp-&nbsp45
+                  <option value="檸檬黑糖冬瓜 - 45">檸檬黑糖冬瓜&nbsp-&nbsp45
+                </optgroup>
+                <optgroup label="豆漿系列：">
+                  <option value="冬瓜豆漿 - 45">冬瓜豆漿&nbsp-&nbsp45
+                  <option value="紅茶豆漿 - 45">紅茶豆漿&nbsp-&nbsp45
+                </optgroup>
+            </select>
+        <form id="form1"><br>
+            <label>甜度：</label><br>
+            <input name="sweet" type="radio" value="正常甜">正常甜
+            <input name="sweet" type="radio" value="五分甜">五分甜
+            <input name="sweet" type="radio" value="三分甜">三分甜
+            <input name="sweet" type="radio" value="一分甜">一分甜
+            <input name="sweet" type="radio" value="無糖">無糖
+        </form>
+        <form id="form2"><br>
+          <label>冰塊：</label><br>
+            <input name="ice" type="radio" value="微冰">微冰
+            <input name="ice" type="radio" value="去冰(小碎冰)">去冰(小碎冰)
+        </form>
+    </div>
+
+    <div class="col-md-5">
+        <br>
+        <button id="clear" class="btn btn-primary btn-sm">清除</button>   <!-- ok -->
+        <button id="delete" class="btn btn-primary btn-sm">刪除最後一筆</button>
+        <button id="collect" class="btn btn-primary btn-sm">收藏</button>
+        <div class="rating-box">    <!-- 星星評分 -->
+            <div class="rating">
+                <br>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+            </div>
+            <b><em id="rating-value"></em></b>
+        </div>
+        <hr>
+        <ul id="list"></ul>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58236.82288848533!2d120.57555145820314!3d24.17869580000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691622547434fb%3A0xfc1d20509f076806!2z6Ieq5bex5L6G57SF6Iy26a6u5LmzIOWPsOS4remAoueUsuW6lw!5e0!3m2!1szh-TW!2stw!4v1664332256689!5m2!1szh-TW!2stw" width="450" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4 style="color: black">{{ current_user.username }}</h4>
+                <h6>頭像</h6>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+    </div>
+</div>
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document
+            .getElementById('menu')
+            .addEventListener('input', handleSelect);
+    })
+    function handleSelect(event){
+        let select = event.target;  // document.getElementById('menu');
+        // console.log(select.value);
+        let choices = [];
+        let value = [];
+        for(let i=0;i<select.selectedOptions.length;i++){           // 選幾個印出幾個
+            choices.push(select.selectedOptions[i].value);
+            // var txtNode = document.createTextNode(select.selectedOptions[i].value);
+            list.innerHTML += "<li>" + select.selectedOptions[i].value + "</li>";
+            if (list.children.length==0){
+                break;
+            }else{
+                document.getElementById("delete").onclick =         //刪除最後一筆
+                function(){
+                    $('#list li:last').remove()     //remove
+                }
+                document.getElementById("clear").onclick =
+                function(){
+                    var c = document.getElementById("list");            //c => Clear
+                    c.innerHTML = "";   // 刪除ul的內容(刪除所有li)
+                    // list.innerHTML -= "<li>" + select.selectedOptions[i].value + "</li>";
+                }
+                document.getElementById("collect").onclick =         //收藏
+                function(){
+                    for(let i=0;i<select.selectedOptions.length;i++){
+                        value.push(choices[i].split('-')[0])
+                        localStorage.setItem(choices[i],value[i]);
+                        console.log(localStorage.getItem(choices[i]));
+                    }
+                }
+            }
+        }
+    }
+
+    //星星評價
+    const stars=document.querySelector(".rating").children;
+    let ratingValue
+    let index //目前選到的星星
+    document.getElementById("rating-value").innerHTML = "請評分"
+    for(let i=0;i<stars.length;i++){    //i為被選到的星星
+        stars[i].addEventListener("mouseover",function(){
+        //  console.log(i)
+            document.getElementById("rating-value").innerHTML = "正在評分..."
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=i;j++){
+                stars[j].classList.remove("fa-star-o")       //先移除空心的星星
+                stars[j].classList.add("fa-star")        //添加新的星星 如果i=j表示選中的
+            }
+        })
+        stars[i].addEventListener("click",function(){
+            ratingValue=i
+            index=i
+            $('#rating-value').html(ratingValue + '.0') ;
+            var rank = i;
+            localStorage.setItem("自己來紅茶鮮乳",rank);     //r=幾星
+        })
+        stars[i].addEventListener("mouseout",function(){
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=index;j++){
+                stars[j].classList.remove("fa-star-o")
+                stars[j].classList.add("fa-star")
+            }
+        })
+    }
+</script>
+{% endblock script %}
+
+{% endblock %}

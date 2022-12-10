@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h3, h4, label, form {color: white;}
+    #list {color: white;}
+</style>
+{% endblock style %}
+<div class="row">
+    <div class="col-md-5">
+        <h3><b>店家：Mateas鮮奶茶沙龍 ‧ 台中旗艦店</b></h3>
+        <h4>地址：台中市西屯區永福路86號</h4>
+        <label>菜單查詢：</label><br>
+            <select id="menu" name="drink" multiple size="10">
+                <optgroup label="完美比例-黃金鮮奶茶：">
+                    <option value="盧哈娜鮮奶茶 - 63/升級+7元">盧哈娜鮮奶茶&nbsp-&nbsp63/升級+7元
+                    <option value="康提鮮奶茶 - 63/升級+7元">康提鮮奶茶&nbsp-&nbsp63/升級+7元
+                    <option value="Mateas茶王鮮奶茶 - 63/升級+7元">Mateas茶王鮮奶茶&nbsp-&nbsp63/升級+7元
+                    <option value="黑烏龍鮮奶茶 - 63/升級+7元">黑烏龍鮮奶茶&nbsp-&nbsp63/升級+7元
+                    <option value="手刷抹茶鮮奶茶 - 63/升級+7元">手刷抹茶鮮奶茶&nbsp-&nbsp63/升級+7元
+                </optgroup>
+                <optgroup label="偏執精選-韻味原茶：">
+                    <option value="經典康提紅茶 - 30 (限無糖/三分)">經典康提紅茶&nbsp-&nbsp30 (限無糖/三分)
+                    <option value="首春綠茶(台茶13號) - 30 (限無糖/三分)">首春綠茶(台茶13號)&nbsp-&nbsp30 (限無糖/三分)
+                    <option value="Mateas茶王 - 30 (限無糖/三分)">Mateas茶王&nbsp-&nbsp30 (限無糖/三分)
+                    <option value="雨前青茶(台茶12號) - 30 (限無糖/三分)">雨前青茶(台茶12號)&nbsp-&nbsp30 (限無糖/三分)
+                </optgroup>
+                <optgroup label="天然絕色-濱彩果味茶：">
+                    <option value="綠茶/青茶養色多 - 50">綠茶/青茶養色多&nbsp-&nbsp50
+                    <option value="柚香雨前青茶 - 60">柚香雨前青茶&nbsp-&nbsp60
+                    <option value="柚香蘆薈果粒 - 70">柚香蘆薈果粒&nbsp-&nbsp70
+                    <option value="柚香養樂多 - 60">柚香養樂多&nbsp-&nbsp60
+                    <option value="香橙雨前青茶 - 65">香橙雨前青茶&nbsp-&nbsp65
+                    <option value="香橙蘆薈果粒 - 70">香橙蘆薈果粒&nbsp-&nbsp70
+                </optgroup>
+            </select>
+        <form id="form1">
+            <label>+10元：</label><br>
+            <input name="item-inner" type="radio" value="波霸">波霸
+            <input name="item-inner" type="radio" value="蘆薈">蘆薈
+            <input name="item-inner" type="radio" value="嫩仙草">嫩仙草
+            <input name="item-inner" type="radio" value="招牌粉粿">招牌粉粿
+        </form>
+        <form id="form2"><br>
+            <label>甜度：</label><br>
+            <input name="sweet" type="radio" value="五分甜">五分甜
+            <input name="sweet" type="radio" value="三分甜">三分甜
+            <input name="sweet" type="radio" value="無糖">無糖
+        </form>
+        <form id="form3"><br>
+          <label>冰塊：</label><br>
+            <input name="ice" type="radio" value="正常冰">正常冰
+            <input name="ice" type="radio" value="少冰">少冰
+            <input name="ice" type="radio" value="微冰">微冰
+            <input name="ice" type="radio" value="去冰(小碎冰)">去冰(小碎冰)
+            <input name="ice" type="radio" value="完全去冰">完全去冰
+        </form>
+    </div>
+
+    <div class="col-md-5">
+        <br>
+        <button id="clear" class="btn btn-primary btn-sm">清除</button>   <!-- ok -->
+        <button id="delete" class="btn btn-primary btn-sm">刪除最後一筆</button>
+        <button id="collect" class="btn btn-primary btn-sm">收藏</button>
+        <div class="rating-box">    <!-- 星星評分 -->
+            <div class="rating">
+                <br>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+            </div>
+            <b><em id="rating-value"></em></b>
+        </div>
+        <hr>
+        <ul id="list"></ul>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29113.650475622984!2d120.58255018237956!3d24.19955299965675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469160765b96d85%3A0x73771f21d2686b44!2zNDA35Y-w5Lit5biC6KW_5bGv5Y2A5rC456aP6LevODbomZ8!5e0!3m2!1szh-TW!2stw!4v1667900497209!5m2!1szh-TW!2stw" width="450" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4 style="color: black">{{ current_user.username }}</h4>
+                <h6>頭像</h6>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+    </div>
+</div>
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document
+            .getElementById('menu')
+            .addEventListener('input', handleSelect);
+    })
+    function handleSelect(event){
+        let select = event.target;  // document.getElementById('menu');
+        // console.log(select.value);
+        let choices = [];
+        let value = [];
+        for(let i=0;i<select.selectedOptions.length;i++){           // 選幾個印出幾個
+            choices.push(select.selectedOptions[i].value);
+            // var txtNode = document.createTextNode(select.selectedOptions[i].value);
+            list.innerHTML += "<li>" + select.selectedOptions[i].value + "</li>";
+            if (list.children.length==0){
+                break;
+            }else{
+                document.getElementById("delete").onclick =         //刪除最後一筆
+                function(){
+                    $('#list li:last').remove()     //remove
+                }
+                document.getElementById("clear").onclick =
+                function(){
+                    var c = document.getElementById("list");            //c => Clear
+                    c.innerHTML = "";   // 刪除ul的內容(刪除所有li)
+                    // list.innerHTML -= "<li>" + select.selectedOptions[i].value + "</li>";
+                }
+                document.getElementById("collect").onclick =         //收藏
+                function(){
+                    for(let i=0;i<select.selectedOptions.length;i++){
+                        value.push(choices[i].split('-')[0])
+                        localStorage.setItem(choices[i],value[i]);
+                        console.log(localStorage.getItem(choices[i]));
+                    }
+                }
+            }
+        }
+    }
+
+    //星星評價
+    const stars=document.querySelector(".rating").children;
+    let ratingValue
+    let index //目前選到的星星
+    document.getElementById("rating-value").innerHTML = "請評分"
+    for(let i=0;i<stars.length;i++){    //i為被選到的星星
+        stars[i].addEventListener("mouseover",function(){
+        //  console.log(i)
+            document.getElementById("rating-value").innerHTML = "正在評分..."
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=i;j++){
+                stars[j].classList.remove("fa-star-o")       //先移除空心的星星
+                stars[j].classList.add("fa-star")        //添加新的星星 如果i=j表示選中的
+            }
+        })
+        stars[i].addEventListener("click",function(){
+            ratingValue=i
+            index=i
+            $('#rating-value').html(ratingValue + '.0') ;
+            var rank = i;
+            localStorage.setItem("Mateas",rank);     //r=幾星
+        })
+        stars[i].addEventListener("mouseout",function(){
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=index;j++){
+                stars[j].classList.remove("fa-star-o")
+                stars[j].classList.add("fa-star")
+            }
+        })
+    }
+</script>
+{% endblock script %}
+
+{% endblock %}

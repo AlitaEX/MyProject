@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h3, h4, label, form {color: white;}
+    #list {color: white;}
+</style>
+{% endblock style %}
+<div class="row">
+    <div class="col-md-5">
+        <h3><b>店家：黑翡淬 公益店</b></h3>
+        <h4>地址：台中市西屯區永福路86號</h4>
+        <label>菜單查詢：</label><br>
+            <select id="menu" name="drink" multiple size="10">
+                <optgroup label="黑糖珍珠系列：">
+                    <option value="黑糖珍珠撞茶 - 冷:55 (M)/熱:60 (M)">黑糖珍珠撞茶&nbsp-&nbsp冷:55 (M)/熱:60 (M)
+                    <option value="抹茶紅豆珍珠撞奶 - 冷:65 (M)/熱:65 (M)">抹茶紅豆珍珠撞奶&nbsp-&nbsp冷:65 (M)/熱:65 (M)
+                    <option value="巧克力珍珠撞茶 - 冷:60 (M)/熱:60 (M)">巧克力珍珠撞茶&nbsp-&nbsp冷:60 (M)/熱:60 (M)
+                    <option value="黑糖珍珠醇紅拿鐵 - 冷:69 (L)/熱:69 (M)">黑糖珍珠醇紅拿鐵&nbsp-&nbsp冷:69 (L)/熱:69 (M)
+                    <option value="黑糖珍珠觀音拿鐵 - 冷:75 (L)/熱:75 (M)">黑糖珍珠觀音拿鐵&nbsp-&nbsp冷:75 (L)/熱:75 (M)
+                    <option value="黑糖珍珠鮮綠拿鐵 - 冷:69 (L)/熱:69 (M)">黑糖珍珠鮮綠拿鐵&nbsp-&nbsp冷:69 (L)/熱:69 (M)
+                </optgroup>
+                <optgroup label="嚼感FunQ系列：">
+                    <option value="黑糖FunQ(方Q)撞奶 - 冷:60 (M)/熱:60 (M)">黑糖FunQ(方Q)撞奶&nbsp-&nbsp冷:60 (M)/熱:60 (M)
+                    <option value="巧克力FunQ(方Q)撞奶 - 冷:60 (M)/熱:60(M)">巧克力FunQ(方Q)撞奶&nbsp-&nbsp冷:60 (M)/熱:60(M)
+                </optgroup>
+                <optgroup label="古法釀淬系列：">
+                    <option value="手做古早味冬瓜茶 - 30">手做古早味冬瓜茶&nbsp-&nbsp30
+                    <option value="培淬黑豆茶 - 冷:40 (L)/熱:40 (M)">培淬黑豆茶&nbsp-&nbsp冷:40 (L)/熱:40 (M)
+                    <option value="黑豆黑木耳釀 - 冷:50 (L)/熱:50 (M)">黑豆黑木耳釀&nbsp-&nbsp冷:50 (L)/熱:50 (M)
+                    <option value="青檸木耳釀 - 冷:50 (L)/熱:50 (M)">青檸木耳釀&nbsp-&nbsp冷:50 (L)/熱:50 (M)
+                    <option value="桂花烏梅釀 - 冷:45 (L)/熱:45 (M)">桂花烏梅釀&nbsp-&nbsp冷:45 (L)/熱:45 (M)
+                </optgroup>
+                <optgroup label="原淬茶飲系列：">
+                    <option value="醇釀鮮紅茶 - 冷:25 (L)/熱:25 (M)">醇釀鮮紅茶&nbsp-&nbsp冷:25 (L)/熱:25 (M)
+                    <option value="甘淬鮮綠茶 - 冷:30 (L)/熱:30 (M)">甘淬鮮綠茶&nbsp-&nbsp冷:30 (L)/熱:30 (M)
+                    <option value="冽淬鐵觀音 - 冷:35 (L)/熱:35 (M)">冽淬鐵觀音&nbsp-&nbsp冷:35 (L)/熱:35 (M)
+                    <option value="韻淬包種青茶 - 冷:35 (L)/熱:35 (M)">韻淬包種青茶&nbsp-&nbsp冷:35 (L)/熱:35 (M)
+                    <option value="翡淬嫩芽綠茶 - 冷:35 (L)/熱:35 (M)">翡淬嫩芽綠茶&nbsp-&nbsp冷:35 (L)/熱:35 (M)
+                </optgroup>
+                <optgroup label="農淬鮮奶系列：">
+                    <option value="醇紅拿鐵 - 冷:55 (L)/熱:55 (M)">醇紅拿鐵&nbsp-&nbsp冷:55 (L)/熱:55 (M)
+                    <option value="鮮綠拿鐵 - 冷:55 (L)/熱:55 (M)">鮮綠拿鐵&nbsp-&nbsp冷:55 (L)/熱:55 (M)
+                    <option value="冬瓜拿鐵 - 冷:55 (L)/熱:55 (M)">冬瓜拿鐵&nbsp-&nbsp冷:55 (L)/熱:55 (M)
+                    <option value="觀音拿鐵 - 冷:60 (L)/熱:60 (M)">觀音拿鐵&nbsp-&nbsp冷:60 (L)/熱:60 (M)
+                    <option value="巧克力拿鐵 - 冷:65 (L)/熱:65 (M)">巧克力拿鐵&nbsp-&nbsp冷:65 (L)/熱:65 (M)
+                </optgroup>
+                <optgroup label="鮮淬特調系列：">
+                    <option value="冬瓜鮮綠/醇紅茶 - 40">冬瓜鮮綠/醇紅茶&nbsp-&nbsp40
+                    <option value="冬瓜鐵觀音 - 45">冬瓜鐵觀音&nbsp-&nbsp45
+                    <option value="冬瓜檸檬 - 50">冬瓜檸檬&nbsp-&nbsp50
+                    <option value="冬瓜白玉翡翠 - 60">冬瓜白玉翡翠&nbsp-&nbsp60
+                    <option value="翡翠檸檬 - 55">翡翠檸檬&nbsp-&nbsp55
+                    <option value="凍檸紅茶 - 冷/熱:55 (L)/(M)">凍檸紅茶&nbsp-&nbsp冷/熱:55 (L)/(M)
+                    <option value="鳳梨百香綠(夏季限定) - 55">鳳梨百香綠(夏季限定)&nbsp-&nbsp55
+                </optgroup>
+                <optgroup label="彩淬森林系列：">
+                    <option value="玫瑰醇釀 - 70">玫瑰醇釀&nbsp-&nbsp70
+                    <option value="玫瑰綠翡淬 - 70">玫瑰綠翡淬&nbsp-&nbsp70
+                    <option value="玫瑰莊園紅 - 70">玫瑰莊園紅&nbsp-&nbsp70
+                    <option value="仲夏莓果森林 - 冷:70 (L)/熱:50 (M)">仲夏莓果森林&nbsp-&nbsp冷:70 (L)/熱:50 (M)
+                    <option value="莓果森林綠 - 冷:70 (L)/熱:50 (M)">莓果森林綠&nbsp-&nbsp冷:70 (L)/熱:50 (M)
+                    <option value="莓果森林紅 - 冷:70 (L)/熱:50 (M)">莓果森林紅&nbsp-&nbsp冷:70 (L)/熱:50 (M)
+                </optgroup>
+                <optgroup label="暖淬系列：">
+                    <option value="暖淬黑糖薑母鴨茶 - 70">暖淬黑糖薑母鴨茶&nbsp-&nbsp70
+                    <option value="燻淬薑汁檸檬 - 70">燻淬薑汁檸檬&nbsp-&nbsp70
+                    <option value="熱淬薑汁檸檬 - 冷:70 (L)/熱:50 (M)">熱淬薑汁檸檬&nbsp-&nbsp冷:70 (L)/熱:50 (M)
+                    <option value="煉淬桂圓檸檬 - 冷:70 (L)/熱:50 (M)">煉淬桂圓檸檬&nbsp-&nbsp冷:70 (L)/熱:50 (M)
+                    <option value="炙淬薑茶拿鐵 - 冷:70 (L)/熱:50 (M)">炙淬薑茶拿鐵&nbsp-&nbsp冷:70 (L)/熱:50 (M)
+                </optgroup>
+            </select>
+        <form id="form1"><br>
+            <label>+10元：</label><br>
+            <input name="item-inner" type="radio" value="白玉珍珠">白玉珍珠
+            <input name="item-inner" type="radio" value="方Q(Fun Q)">方Q(Fun Q)
+        </form>
+        <form id="form2"><br>
+            <label>甜度：</label><br>
+            <input name="sweet" type="radio" value="全糖">全糖
+            <input name="sweet" type="radio" value="少糖">少糖
+            <input name="sweet" type="radio" value="半糖">半糖
+            <input name="sweet" type="radio" value="微糖">微糖
+            <input name="sweet" type="radio" value="無糖">無糖
+        </form>
+        <form id="form3"><br>
+          <label>冰塊：</label><br>
+            <input name="ice" type="radio" value="正常冰">正常冰
+            <input name="ice" type="radio" value="少冰">少冰
+            <input name="ice" type="radio" value="去冰">去冰
+            <input name="ice" type="radio" value="完全去冰">完全去冰
+        </form>
+    </div>
+
+    <div class="col-md-5">
+        <br>
+        <button id="clear" class="btn btn-primary btn-sm">清除</button>   <!-- ok -->
+        <button id="delete" class="btn btn-primary btn-sm">刪除最後一筆</button>
+        <button id="collect" class="btn btn-primary btn-sm">收藏</button>
+        <div class="rating-box">    <!-- 星星評分 -->
+            <div class="rating">
+                <br>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+            </div>
+            <b><em id="rating-value"></em></b>
+        </div>
+        <hr>
+        <ul id="list"></ul>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.8189710816496!2d120.63943651744384!3d24.178080800000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346916205cd0abbb%3A0xef42f9ad19be0d9!2z6buR57-h5res!5e0!3m2!1szh-TW!2stw!4v1665127870221!5m2!1szh-TW!2stw" width="450" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4 style="color: black">{{ current_user.username }}</h4>
+                <h6>頭像</h6>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+    </div>
+</div>
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document
+            .getElementById('menu')
+            .addEventListener('input', handleSelect);
+    })
+    function handleSelect(event){
+        let select = event.target;  // document.getElementById('menu');
+        // console.log(select.value);
+        let choices = [];
+        let value = [];
+        for(let i=0;i<select.selectedOptions.length;i++){           // 選幾個印出幾個
+            choices.push(select.selectedOptions[i].value);
+            // var txtNode = document.createTextNode(select.selectedOptions[i].value);
+            list.innerHTML += "<li>" + select.selectedOptions[i].value + "</li>";
+            if (list.children.length==0){
+                break;
+            }else{
+                document.getElementById("delete").onclick =         //刪除最後一筆
+                function(){
+                    $('#list li:last').remove()     //remove
+                }
+                document.getElementById("clear").onclick =
+                function(){
+                    var c = document.getElementById("list");            //c => Clear
+                    c.innerHTML = "";   // 刪除ul的內容(刪除所有li)
+                    // list.innerHTML -= "<li>" + select.selectedOptions[i].value + "</li>";
+                }
+                document.getElementById("collect").onclick =         //收藏
+                function(){
+                    for(let i=0;i<select.selectedOptions.length;i++){
+                        value.push(choices[i].split('-')[0])
+                        localStorage.setItem(choices[i],value[i]);
+                        console.log(localStorage.getItem(choices[i]));
+                    }
+                }
+            }
+        }
+    }
+
+    //星星評價
+    const stars=document.querySelector(".rating").children;
+    let ratingValue
+    let index //目前選到的星星
+    document.getElementById("rating-value").innerHTML = "請評分"
+    for(let i=0;i<stars.length;i++){    //i為被選到的星星
+        stars[i].addEventListener("mouseover",function(){
+        //  console.log(i)
+            document.getElementById("rating-value").innerHTML = "正在評分..."
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=i;j++){
+                stars[j].classList.remove("fa-star-o")       //先移除空心的星星
+                stars[j].classList.add("fa-star")        //添加新的星星 如果i=j表示選中的
+            }
+        })
+        stars[i].addEventListener("click",function(){
+            ratingValue=i
+            index=i
+            $('#rating-value').html(ratingValue + '.0') ;
+            var rank = i;
+            localStorage.setItem("黑翡淬",rank);     //r=幾星
+        })
+        stars[i].addEventListener("mouseout",function(){
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=index;j++){
+                stars[j].classList.remove("fa-star-o")
+                stars[j].classList.add("fa-star")
+            }
+        })
+    }
+</script>
+{% endblock script %}
+
+{% endblock %}

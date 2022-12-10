@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h3, h4, label, form {color: white;}
+    #list {color: white;}
+</style>
+{% endblock style %}
+<div class="row">
+    <div class="col-md-5">
+        <h3><b>店家：一沐日 (台中一中總店)</b></h3>
+        <h4>地址：台中市北區一中街130號</h4>
+        <label>菜單查詢：</label><br>
+            <select id="menu" name="drink" size="10" multiple>
+                <optgroup label="茶人系列 - 原味茶：">
+                    <option value="茉莉綠茶 - 30">茉莉綠茶&nbsp-&nbsp30
+                    <option value="招牌紅茶 - 30">招牌紅茶&nbsp-&nbsp30
+                    <option value="炭培烏龍 - 35">炭培烏龍&nbsp-&nbsp35
+                    <option value="油切蕎麥茶 - 35">油切蕎麥茶&nbsp-&nbsp35
+                    <option value="手採高山青 - 35">手採高山青&nbsp-&nbsp35
+                    <option value="日月潭紅茶 - 40">日月潭紅茶&nbsp-&nbsp40
+                </optgroup>
+                <optgroup label="講究系列 - 風味茶：">
+                    <option value="梅果招牌紅 - 50">梅果招牌紅&nbsp-&nbsp50
+                    <option value="養樂多綠茶 - 50">養樂多綠茶&nbsp-&nbsp50
+                    <option value="鮮檸檬紅/青 - 50">鮮檸檬紅/青&nbsp-&nbsp50
+                    <option value="鮮百香果綠茶 - 65">鮮百香果綠茶&nbsp-&nbsp65
+                    <option value="鮮葡萄柚綠茶 - 65">鮮葡萄柚綠茶&nbsp-&nbsp65
+                    <option value="荔枝蘆薈 - 60">荔枝蘆薈&nbsp-&nbsp60
+                    <option value="鳳梅茶 - 65">鳳梅茶&nbsp-&nbsp65
+                </optgroup>
+                <optgroup label="香醇系列 - 奶茶：">
+                    <option value="招牌紅奶茶 - 50">招牌紅奶茶&nbsp-&nbsp50
+                    <option value="粉粿黑糖奶茶 - 60">粉粿黑糖奶茶&nbsp-&nbsp60
+                    <option value="黃金蕎麥奶茶 - 50">黃金蕎麥奶茶&nbsp-&nbsp50
+                    <option value="日月潭奶茶 - 60">日月潭奶茶&nbsp-&nbsp60
+                    <option value="極黑芝麻奶茶 - 60">極黑芝麻奶茶&nbsp-&nbsp60
+                    <option value="波霸黑糖燕麥奶 - 65">波霸黑糖燕麥奶&nbsp-&nbsp65
+                </optgroup>
+                <optgroup label="濃韻系列 - 芝士奶蓋：">
+                    <option value="奶蓋招牌紅茶 - 60">奶蓋招牌紅茶&nbsp-&nbsp60
+                    <option value="奶蓋綠茶 - 60">奶蓋綠茶&nbsp-&nbsp60
+                    <option value="奶蓋烏龍茶 - 60">奶蓋烏龍茶&nbsp-&nbsp60
+                    <option value="奶蓋蕎麥茶 - 60">奶蓋蕎麥茶&nbsp-&nbsp60
+                </optgroup>
+                <optgroup label="日常系列 - 滋味茶：">
+                    <option value="粉粿黑糖檸檬 - 60">粉粿黑糖檸檬&nbsp-&nbsp60
+                    <option value="粉粿桂花檸檬 - 60">粉粿桂花檸檬&nbsp-&nbsp60
+                    <option value="荔枝烏龍茶 - 50">荔枝烏龍茶&nbsp-&nbsp50
+                    <option value="桂花蕎麥茶 - 50">桂花蕎麥茶&nbsp-&nbsp50
+                    <option value="柚子烏龍茶 - 55">柚子烏龍茶&nbsp-&nbsp55
+                </optgroup>
+                <optgroup label="堅持系列 - 冬瓜茶：">
+                    <option value="招牌冬瓜紅 - 40">招牌冬瓜紅&nbsp-&nbsp40
+                    <option value="冬瓜青茶 - 45">冬瓜青茶&nbsp-&nbsp45
+                    <option value="冬瓜檸檬茶 - 45">冬瓜檸檬茶&nbsp-&nbsp45
+                    <option value="冬瓜仙草蜜 - 45">冬瓜仙草蜜&nbsp-&nbsp45
+                </optgroup>
+                <optgroup label="自然系列 - 鮮奶茶：">
+                    <option value="招牌紅拿鐵 - 70">招牌紅拿鐵&nbsp-&nbsp70
+                    <option value="烏龍拿鐵 - 70">烏龍拿鐵&nbsp-&nbsp70
+                    <option value="黃金蕎麥拿鐵 - 70">黃金蕎麥拿鐵&nbsp-&nbsp70
+                    <option value="日月潭拿鐵 - 80">日月潭拿鐵&nbsp-&nbsp80
+                    <option value="極黑芝麻拿鐵 - 80">極黑芝麻拿鐵&nbsp-&nbsp80
+                </optgroup>
+            </select>
+        <form id="form1"><br>
+            <label>+10：</label><br>  <!-- 能兩個值value更好 -->
+            <input name="item-inner" type="radio" value="波霸">波霸
+            <input name="item-inner" type="radio" value="蘆薈">蘆薈
+            <input name="item-inner" type="radio" value="嫩仙草">嫩仙草
+            <input name="item-inner" type="radio" value="招牌粉粿">招牌粉粿
+        </form>
+        <form id="form2"><br>
+            <label>甜度：</label><br>
+            <input name="sweet" type="radio" value="正常甜">正常甜
+            <input name="sweet" type="radio" value="七分甜">七分甜
+            <input name="sweet" type="radio" value="五分甜">五分甜
+            <input name="sweet" type="radio" value="三分甜">三分甜
+            <input name="sweet" type="radio" value="無糖">無糖
+        </form>
+        <form id="form3"><br>
+            <label>冰塊：</label><br>
+            <input name="ice" type="radio" value="正常冰">正常冰
+            <input name="ice" type="radio" value="少冰">少冰
+            <input name="ice" type="radio" value="微冰">微冰
+            <input name="ice" type="radio" value="去冰(小碎冰)">去冰(小碎冰)
+            <input name="ice" type="radio" value="完全去冰">完全去冰
+        </form>
+    </div>
+
+    <div class="col-md-5">
+        <br>
+        <button id="clear" class="btn btn-primary btn-sm">清除</button>   <!-- ok -->
+        <button id="delete" class="btn btn-primary btn-sm">刪除最後一筆</button>
+        <button id="collect" class="btn btn-primary btn-sm">收藏</button>
+        <div class="rating-box">    <!-- 星星評分 -->
+            <div class="rating">
+                <br>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+            </div>
+            <b><em id="rating-value"></em></b>
+        </div>
+
+        <hr>
+        <ul id="list"></ul>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.532658542901!2d120.68455951498899!3d24.153045284392476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d67b05ede1d%3A0x1940f714dbf6c263!2zNDA05Y-w5Lit5biC5YyX5Y2A5LiA5Lit6KGXMTMw6Jmf!5e0!3m2!1szh-TW!2stw!4v1653847360451!5m2!1szh-TW!2stw" width="450" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4 style="color: black">{{ current_user.username }}</h4>
+                <h6>頭像</h6>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+    </div>
+</div>
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document
+            .getElementById('menu')
+            .addEventListener('input', handleSelect);
+    })
+    function handleSelect(event){
+        let select = event.target;  // document.getElementById('menu');
+        // console.log(select.value);
+        let choices = [];
+        let value = []; //飲品
+        for(let i=0;i<select.selectedOptions.length;i++){           // 選幾個印出幾個
+            choices.push(select.selectedOptions[i].value);
+            // var txtNode = document.createTextNode(select.selectedOptions[i].value);
+            list.innerHTML += "<li>" + select.selectedOptions[i].value + "</li>";
+            if (list.children.length==0){
+                break;
+            }else{
+                document.getElementById("delete").onclick =         //刪除最後一筆
+                function(){
+                    $('#list li:last').remove()     //remove
+                }
+                document.getElementById("clear").onclick =
+                function(){
+                    var c = document.getElementById("list");            //c => Clear
+                    c.innerHTML = "";   // 刪除ul的內容(刪除所有li)
+                    // list.innerHTML -= "<li>" + select.selectedOptions[i].value + "</li>";
+                }
+                document.getElementById("collect").onclick =         //收藏
+                function(){
+                    for(let i=0;i<select.selectedOptions.length;i++){
+                        value.push(choices[i].split('-')[0])
+                        localStorage.setItem(choices[i],value[i]);
+                        console.log(localStorage.getItem(choices[i]));
+                    }
+                }
+            }
+        }
+    }
+
+    //星星評價
+    const stars=document.querySelector(".rating").children;
+    let ratingValue
+    let index //目前選到的星星
+    document.getElementById("rating-value").innerHTML = "請評分"
+    for(let i=0;i<stars.length;i++){    //i為被選到的星星
+    stars[i].addEventListener("mouseover",function(){
+        //console.log(i);
+        document.getElementById("rating-value").innerHTML = "正在評分..."
+        for(let j=0;j<stars.length;j++){
+            stars[j].classList.remove("fa-star")     //reset 所有星星
+            stars[j].classList.add("fa-star-o")
+        }
+        for(let j=0;j<=i;j++){
+            stars[j].classList.remove("fa-star-o")       //先移除空心的星星
+            stars[j].classList.add("fa-star")        //添加新的星星 如果i=j表示選中的
+        }
+    })
+    stars[i].addEventListener("click",function(){
+        ratingValue=i
+        index=i
+        $('#rating-value').html(ratingValue + '.0') ;
+          var rank = i;
+          localStorage.setItem("一沐日",rank);     //r=幾星
+          //console.log(list);
+          //console.log(localStorage.getItem("一沐日"));
+    })
+    stars[i].addEventListener("mouseout",function(){
+        for(let j=0;j<stars.length;j++){
+            stars[j].classList.remove("fa-star")     //reset 所有星星
+            stars[j].classList.add("fa-star-o")
+        }
+        for(let j=0;j<=index;j++){
+            stars[j].classList.remove("fa-star-o")
+            stars[j].classList.add("fa-star")
+        }
+    })
+}
+
+</script>
+{% endblock script %}
+
+{% endblock %}

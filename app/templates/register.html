@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h1, label {color: white;}
+</style>
+{% endblock style %}
+    <h1>建立帳戶</h1>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            {% import 'bootstrap/wtf.html' as wtf %}
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+{% block script %}
+<script>
+    document.querySelector('.btn-default').className = 'btn btn-primary';
+</script>
+{% endblock script %}
+{% endblock %}

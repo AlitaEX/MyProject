@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h2, h4 {color: white;}
+    #collection {color: white;float: left;}
+    #clear {float: left;}
+    #test {color: white;}
+</style>
+{% endblock style %}
+<div>
+    <div class="col-md-5">
+        <h2>{{ current_user.username }}</h2>
+        <h4><b>您的收藏：</b></h4>
+        <button id="clear" class="btn btn-primary btn-sm">清除收藏</button>
+        <ul id="collection"></ul>
+    </div>
+    <div class="col-md-5"></div>
+<!--    <div class="col-md-5" id="test">-->
+<!--        <p>test</p>-->
+<!--        {% for i in content %}-->
+<!--            <p>{{i}}</p>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+    <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4 style="color: black">{{ current_user.username }}</h4>
+                <h6>頭像</h6>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+    </div>
+</div>
+{% block script %}
+<script>
+    document.getElementById("clear").onclick =         //收藏
+        function(){
+            localStorage.clear()
+        }
+    let key = [];
+    let value = [];
+    for(var i=0;i<=localStorage.length-1;i++){
+        var K=localStorage.key(i);   //key機碼
+        key.push(K)
+        value.push(key[i].split('-')[0]) //分割機碼(key)
+    }
+    console.log(localStorage.getItem(key[i]));
+    console.log(key);
+    console.log(value);
+
+    for(var i=0;i<=localStorage.length-1;i++){
+        var n = localStorage.getItem(key[i]);    //n => number
+        if(n=='5' || n=='4' || n=='3' || n=='2' || n=='1'){
+           console.log('收藏中有店家名稱，但已排除掉(不顯示)');
+           continue;
+        }else{
+           collection.innerHTML += "<li>" + value[i] + "</li>";
+        }
+    }
+
+</script>
+{% endblock script %}
+{% endblock %}

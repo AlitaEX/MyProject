@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    @media (max-width: 700px){
+        .col-md-7 {display: none;}  /* 不顯示輪播 */
+    }
+    h3 {color: white;}
+    #rank {color: white;}
+</style>
+{% endblock style %}
+<div class="container">
+    <div class="col-md-7">
+        <div id="photoCarousel"  class="carousel slide" data-ride="carousel" data-interval="5000" style="height: 500px;width: 600px;background-color: rgb(0,0,0);">
+            <ol class="carousel-indicators">
+            <li data-target="#photoCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#photoCarousel" data-slide-to="1"></li>
+            <li data-target="#photoCarousel" data-slide-to="2"></li>
+            <li data-target="#photoCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="item active"><!-- img不知道為甚麼不能用類別(Style) -->
+                    <img class="center-block" src="/static/assets/a_nice_holiday.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>一沐日</h4>
+                        <h5><u>油切喬麥茶 - 35</u></h5>
+                        <p>固定無糖<br>不攝取多餘糖份</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/oolong_tea_project.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>得正</h4>
+                        <h5><u>清烏龍 - 30</u></h5>
+                        <p>輕淡的烏龍味</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/do_it_myself.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>自己來紅茶鮮乳</h4>
+                        <h5><u>經典味紅茶牛羊乳 - 60</u></h5>
+                        <p>極少數有出羊奶的店家</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/health_future_tea.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>黑翡淬</h4>
+                        <h5><u>黑糖FunQ(方Q)撞奶 - 冷:60(M)/熱:60(M)</u></h5>
+                        <p>方Q介於珍珠與粉角之間</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/mateas.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>Mateas</h4>
+                        <h5><u>康提鮮奶茶 - 63/升級+7元</u></h5>
+                        <p>偏咖啡味，茶味較重<br>+7元，升級Dr.milker<br>-更濃郁的牛奶味</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/see_joy.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>拾覺</h4>
+                        <h5><u>哈密瓜拿鐵 - 60</u></h5>
+                        <p>目前的最新飲品<br>哈密瓜搭配鮮奶茶的組合<br>-口感清爽不甜膩</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/eight_yo.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>八曜和茶</h4>
+                        <h5><u>八曜和茶 - 30</u></h5>
+                        <p>不含咖啡因<br>採用十多種膳食纖維穀麥製成</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/richa.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>理茶</h4>
+                        <h5><u>莓果朝霧 - 55</u></h5>
+                        <p>朝霧紅茶作為基底<br>加入蔓越莓、桑葚、奇異果等<br>堅持不加糖漿、果醬等添加物<br>以單純水果製成<br>口感酸爽且不會有負擔感，是杯真材實料的好茶！</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/wu_win.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>無飲</h4>
+                        <h5><u>惡魔多多2.0 - 70</u></h5>
+                        <p>屬於季節限定版<br>顏色漸層<br>2.0版本-蘆薈、葡萄汁UP！</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/insir.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>飲仕insir</h4>
+                        <h5><u>井龍養生茶 - 60</u></h5>
+                        <p>很特殊的味道<br>無中藥味</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/blike.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>BLIKE</h4>
+                        <h5><u>旨拿鐵 - 65(S)/85(M)/95(L)</u></h5>
+                        <p>奶茶系列都很香濃</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/chos_drinks.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>良石丘</h4>
+                        <h5><u>小芋石光醇奶 - 65</u></h5>
+                        <p>最多人推薦的一款<br>以冬瓜茶為基底+小芋圓+生奶露</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/yogurt_master.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>優握握x酸奶大獅</h4>
+                        <h5><u>紫米酸奶 - 60</u></h5>
+                        <p>酸奶夠稀有，加上紫米元素讓人躍躍欲試</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/the_little_things.jpg" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>小確幸</h4>
+                        <h5><u>黑糖鮮奶波霸 - 45(M)/65(L)</u></h5>
+                        <p>黑糖鮮奶是招牌飲料！</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="center-block" src="/static/assets/true_boss.png" style="height:500px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>醋頭家</h4>
+                        <h5><u>頂極酵醋飲 - 55</u></h5>
+                        <p>全台首創<br>長年釀造天然酵醋與嚴選上等台灣南投名間茶結合<br>微酸中帶點鮮粹茶味<br>讓味蕾雙重感受，值得嘗鮮品味</p>
+                    </div>
+                </div>
+            </div>
+
+            <a  class="left carousel-control" href="#photoCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a  class="right carousel-control" href="#photoCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3">  <!-- 推薦 -->
+        <h3>排行榜：</h3>
+        <ol id="rank"></ol>
+        <hr>
+    </div>
+
+    <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4>{{ current_user.username }}</h4>
+                <h6>頭像</h6>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+    </div>
+</div>
+
+{% block script %}
+<script>
+    var store=new Array();
+    var score=new Array();
+    for(var i=0;i<=localStorage.length-1;i++){
+        var historyMessage=localStorage.key(i);
+        store.push(historyMessage)
+        score.push(localStorage.getItem(store[i]))
+    }
+    //console.log(store)
+    //console.log(score) //得正
+    var five=new Array();
+    var four=new Array();
+    for(var i=0;i<=localStorage.length-1;i++){
+        let key = localStorage.getItem(store[i])
+        //console.log(key)
+        switch(key){
+            case '5':
+                //console.log(localStorage.key(i))
+                five.push(localStorage.key(i))
+                break;
+            case '4':
+                //console.log(localStorage.key(i))
+                four.push(localStorage.key(i))
+                break;
+            default:
+                //console.log('other')
+                break;
+        }
+    }
+    //console.log(five)
+    //console.log(four)
+    for(var i=0;i<=five.length-1;i++){  //五星
+        if(five.length<10){
+            rank.innerHTML += "<li>" + five[i] + "</li>";
+        }
+    }
+    for(var i=0;i<=four.length-1;i++){  //四星
+        rank.innerHTML += "<li>" + four[i] + "</li>";
+    }
+
+</script>
+{% endblock script%}
+{% endblock %}

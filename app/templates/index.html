@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h1 {color: white;}
+    .alert-Info {color: white;}
+</style>
+{% endblock style %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Hello, {{ current_user.username }}</h1>
+            <hr>
+            <div id="my_tabs">
+                <ul>
+                    <li><a href="#t1"><span>北區</span></a></li>
+                    <li><a href="#t2"><span>北屯</span></a></li>
+                    <li><a href="#t3"><span>西屯</span></a></li>
+                    <li><a href="#t4"><span>南屯</span></a></li>
+                    <li><a href="#t5"><span>西區</span></a></li>
+                    <li><a href="#t6"><span>潭子</span></a></li>
+                    <li><a href="#t7"><span>沙鹿</span></a></li>
+                    <li><a href="#t8"><span>龍井</span></a></li>
+                    <li><a href="#t9"><span>豐原</span></a></li>
+                </ul>
+                <div id="t1">
+                    <h2><a href="{{ url_for('a_nice_holiday') }}">一沐日 台中一中總店</a></h2>
+                    <pre>
+沉澱、放鬆、享受生活 無須形式，就是輕鬆。
+茶即是生活態度。
+我們相信每一杯茶代表的都是一段情感、一個回憶。
+喝茶自然而然地成為我們生活的一部分。
+我們自許不只追求泡茶手藝，更能將茶的生活態度推廣至全世界。</pre>
+                </div>
+                <div id="t2">
+                    <h2><a href="{{ url_for('oolong_tea_project') }}">得正#東山計劃</a></h2>
+                    <pre>
+以三種不同焙火程度的烏龍茶，
+專注烏龍茶為品牌理念，
+得正從一杯烏龍開始，推廣茶飲的風格計劃！</pre>
+                </div>
+                <div id="t3">
+                    <h2><a href="{{ url_for('do_it_myself') }}">自己來紅茶鮮乳 逢甲店</a></h2>
+                    <pre>
+古早味紅茶採用頂級的錫蘭紅茶加入決明子、大麥等，
+遵循傳統老一輩人的工序作為我們的主打基底茶品，
+與台灣在地酪農100%無調整的鮮乳調和， 創造出有『太妃糖香氣的紅茶鮮乳』！</pre>
+                    <h2><a href="{{ url_for('health_future_tea') }}">黑翡淬公益店</a></h2>
+                    <pre>
+一千萬沏一杯好茶，
+一群年輕人堅持夢想創立的無添加茶飲店。
+堅持無添加，原味就是最好的味道！</pre>
+                    <h2><a href="{{ url_for('mateas') }}">Mateas鮮奶茶沙龍 ‧ 台中旗艦店</a></h2>
+                    <pre>
+選用蟬聯多年榮獲 風味絕佳獎(ITQI)的「Dr.Milker極鮮乳」，
+高雅純白且成分無添加，保留接近原始生乳的風味，濃郁的風味與香氣和茶湯相互呼應而誕生「第一名的鮮奶茶」。
+「我唯一相信的方法是，不斷的做、努力的做，直到完全滿意為止」！</pre>
+                </div>
+                <div id="t4">
+                    <h2><a href="{{ url_for('see_joy') }}">拾覺SEEJOY TEA 嶺東店</a></h2>
+                    <pre>
+成本不在第一考量，看到顧客滿意的笑容是拾覺的宗旨，
+透過拿在手上的一杯飲料，重拾你心中最初的感覺！</pre>
+                </div>
+                <div id="t5">
+                    <h2><a href="{{ url_for('eight_yo') }}">八曜和茶 精誠門市</a></h2>
+                    <pre>
+我們提出和茶新飲食概念提案，
+根新代意及形快速化的生活方式八曜和茶即將象徵文化的變遷，
+藉由「和風茶」豐富人們的生活。</pre>
+                    <h2><a href="{{ url_for('richa') }}">理茶中美總店</a></h2>
+                    <pre>
+品牌以「從日常，到品嚐」為核心價值，
+融合「Rich豐富」與「cha茶」兩者意涵，誕生「理茶Richa」。</pre>
+                    <h2><a href="{{ url_for('wu_win') }}">無飲精誠店</a></h2>
+                    <pre>
+2018年夏天成立，團隊來自不同行業，包含了茶農、茶商、行銷、設計、藝人。
+我們曾經都只是一群愛喝茶的朋友，喜歡分享彼此知道好茶的口味與訊息。</pre>
+                    <h2><a href="{{ url_for('insir') }}">飲仕insir總店</a></h2>
+                    <pre>
+無糖茶飲第一品牌，
+嚴選品質優良茶葉，輕盈無負擔健康無疑慮。
+——— 一間做『好』茶的店👍———</pre>
+                    <h2><a href="{{ url_for('blike') }}">BLIKE奶茶專門勤美公益店</a></h2>
+                    <pre>
+〝Beyond your discovery〞
+「發掘，你從未發覺」！</pre>
+                </div>
+                <div id="t6">
+                    <h2><a href="{{ url_for('chos_drinks') }}">良石丘 潭子店</a></h2>
+                    <pre>
+【良】製作健康無負擔飲品的良善初心。
+【石】柔美思緒堆疊成輪廓鮮明的清新石光。
+【丘】看似尋常的日子，引著走向緩緩的幸福小丘。</pre>
+                </div>
+                <div id="t7">
+                    <h2><a href="{{ url_for('yogurt_master') }}">優握握x酸奶大獅</a></h2>
+                    <pre>
+酸奶大獅為優握握旗下酸奶專用品牌，更是酸奶手搖飲創始品牌。
+『YOGURT MASTER』，
+代表酸奶手搖飲之大師匠心精神及大獅王者地位精神及大獅王者地位。</pre>
+                </div>
+                <div id="t8">
+                    <h2><a href="{{ url_for('the_little_things') }}">東海小確幸 東海總店</a></h2>
+                    <pre>
+小確幸黑糖波霸鮮奶，
+東海商圈高人氣的黑糖波霸鮮奶，
+黑糖襯托鮮奶醇味？</pre>
+                </div>
+                <div id="t9">
+                    <h2><a href="{{ url_for('true_boss') }}">醋頭家True boss 豐原三民店</a></h2>
+                    <pre>
+講究自然樸實的永恆升華，
+產品天然健康讓人身體發出光芒！</pre>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4>{{ current_user.username }}</h4>
+                <h5>頭像</h5>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+{% block script %}
+<script>$('#my_tabs').tabs({event:'mouseover', heightStyle:'context', show:'slideDown'});</script>
+{% endblock script %}
+
+{% endblock %}

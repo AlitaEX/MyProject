@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h3, h4, label, form {color: white;}
+    #list {color: white;}
+</style>
+{% endblock style %}
+<div class="row">
+    <div class="col-md-5">
+        <h3><b>店家：小確幸黑糖鮮奶 (東海總店)</b></h3>
+        <h4>地址：台中市龍井區台灣大道五段3巷66號</h4>
+        <label>菜單查詢：</label><br>
+            <select id="menu" name="drink" size="10" multiple>
+                <optgroup label="招牌黑糖系列：">
+                    <option value="黑糖鮮奶波霸 - 45 (M)/55 (L)">黑糖鮮奶波霸&nbsp-&nbsp45 (M)/55 (L)
+                    <option value="黑糖鮮奶茶波霸 - 40 (M)/50 (L)">黑糖鮮奶茶波霸&nbsp-&nbsp40 (M)/50 (L)
+                    <option value="黑糖鮮奶 - 35 (M)/45 (L)">黑糖鮮奶&nbsp-&nbsp35 (M)/45 (L)
+                    <option value="黑糖鮮奶 (紅/綠/青) - 35 (M)/45 (L)">黑糖鮮奶 (紅/綠/青)&nbsp-&nbsp35 (M)/45 (L)
+                    <option value="黑糖紅茶波霸 - 30">黑糖紅茶波霸&nbsp-&nbsp30
+                    <option value="古早味波霸 - 30">古早味波霸&nbsp-&nbsp30
+                    <option value="冬瓜鮮奶 - 45">冬瓜鮮奶&nbsp-&nbsp45
+                </optgroup>
+                <optgroup label="鮮果百分百：">
+                    <option value="冬瓜 (青/綠) - 35">冬瓜 (青/綠)&nbsp-&nbsp35
+                    <option value="冬瓜檸檬 - 35">冬瓜檸檬&nbsp-&nbsp35
+                    <option value="蔗香青茶 - 40">蔗香青茶&nbsp-&nbsp40
+                    <option value="鮮檸金桔 (綠/青) - 45">鮮檸金桔 (綠/青)&nbsp-&nbsp45
+                    <option value="蔓越莓 (綠/汁) - 45">蔓越莓 (綠/汁)&nbsp-&nbsp45
+                    <option value="鮮百香果 (綠/青/汁) - 45">鮮百香果 (綠/青/汁)&nbsp-&nbsp45
+                    <option value="多多綠 - 45">多多綠&nbsp-&nbsp45
+                    <option value="翡翠檸檬 - 45">翡翠檸檬&nbsp-&nbsp45
+                    <option value="甘蔗檸檬 - 45">甘蔗檸檬&nbsp-&nbsp45
+                    <option value="多多檸檬 - 55">多多檸檬&nbsp-&nbsp55
+                    <option value="檸檬汁 - 40">檸檬汁&nbsp-&nbsp40
+                    <option value="新鮮水果茶 - 50">新鮮水果茶&nbsp-&nbsp50
+                </optgroup>
+                <optgroup label="鮮果冰鑽：">
+                    <option value="鮮檸冰鑽 - 40">鮮檸冰鑽&nbsp-&nbsp40
+                    <option value="青檬冰鑽 - 40">青檬冰鑽&nbsp-&nbsp40
+                    <option value="紅檸冰鑽 - 40">紅檸冰鑽&nbsp-&nbsp40
+                    <option value="冬瓜鮮檸冰鑽 - 40">冬瓜鮮檸冰鑽&nbsp-&nbsp40
+                    <option value="蔗香鮮檸冰鑽 - 45">蔗香鮮檸冰鑽&nbsp-&nbsp45
+                    <option value="奇異果冰鑽 - 50">奇異果冰鑽&nbsp-&nbsp50
+                    <option value="多多鮮檸冰鑽 - 55">多多鮮檸冰鑽&nbsp-&nbsp55
+                </optgroup>
+                <optgroup label="精選茶品：">
+                    <option value="日月潭紅茶 - 25">日月潭紅茶&nbsp-&nbsp25
+                    <option value="黑糖冬瓜茶 - 25">黑糖冬瓜茶&nbsp-&nbsp25
+                    <option value="台灣高山茶 - 25">台灣高山茶&nbsp-&nbsp25
+                    <option value="莫香綠茶 - 25">莫香綠茶&nbsp-&nbsp25
+                </optgroup>
+            </select>
+        <form id="form1"><br>
+            <label>甜度：</label><br>
+            <input name="sweet" type="radio" value="正常">正常
+            <input name="sweet" type="radio" value="少糖">少糖
+            <input name="sweet" type="radio" value="半糖">半糖
+            <input name="sweet" type="radio" value="微糖">微糖
+            <input name="sweet" type="radio" value="無糖">無糖
+        </form>
+        <form id="form2"><br>
+          <label>冰塊：</label><br>
+            <input name="ice" type="radio" value="正常">正常
+            <input name="ice" type="radio" value="少冰">少冰
+            <input name="ice" type="radio" value="微冰">微冰
+            <input name="ice" type="radio" value="去冰">去冰
+        </form>
+    </div>
+
+    <div class="col-md-5">
+        <br>
+        <button id="clear" class="btn btn-primary btn-sm">清除</button>   <!-- ok -->
+        <button id="delete" class="btn btn-primary btn-sm">刪除最後一筆</button>
+        <button id="collect" class="btn btn-primary btn-sm">收藏</button>
+        <div class="rating-box">    <!-- 星星評分 -->
+            <div class="rating">
+                <br>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+            </div>
+            <b><em id="rating-value"></em></b>
+        </div>
+        <hr>
+        <ul id="list"></ul>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45887.45086851304!2d120.57548143881179!3d24.185949472025673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e20bfbf9a8b%3A0x9126b1e8d81aacb9!2z5p2x5rW35bCP56K65bm46buR57OW6a6u5aW25rOi6Zy477yI5p2x5rW357i95bqX77yJLeadsea1t-W_heWWnemjsuWTgXzntrLnvo7po7Lmlpnlupd85o6o6Jam6aOy5paZ5bqXfOeJueiJsuiMtumjsnzkurrmsKPojLbpo7J85aSW5bi25LiL5Y2I6Iy25o6o6Jam!5e0!3m2!1szh-TW!2stw!4v1664961563092!5m2!1szh-TW!2stw" width="450" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4 style="color: black">{{ current_user.username }}</h4>
+                <h6>頭像</h6>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+    </div>
+</div>
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document
+            .getElementById('menu')
+            .addEventListener('input', handleSelect);
+    })
+    function handleSelect(event){
+        let select = event.target;  // document.getElementById('menu');
+        // console.log(select.value);
+        let choices = [];
+        let value = [];
+        for(let i=0;i<select.selectedOptions.length;i++){           // 選幾個印出幾個
+            choices.push(select.selectedOptions[i].value);
+            // var txtNode = document.createTextNode(select.selectedOptions[i].value);
+            list.innerHTML += "<li>" + select.selectedOptions[i].value + "</li>";
+            if (list.children.length==0){
+                break;
+            }else{
+                document.getElementById("delete").onclick =         //刪除最後一筆
+                function(){
+                    $('#list li:last').remove()     //remove
+                }
+                document.getElementById("clear").onclick =
+                function(){
+                    var c = document.getElementById("list");            //c => Clear
+                    c.innerHTML = "";   // 刪除ul的內容(刪除所有li)
+                    // list.innerHTML -= "<li>" + select.selectedOptions[i].value + "</li>";
+                }
+                document.getElementById("collect").onclick =         //收藏
+                function(){
+                    for(let i=0;i<select.selectedOptions.length;i++){
+                        value.push(choices[i].split('-')[0])
+                        localStorage.setItem(choices[i],value[i]);
+                        console.log(localStorage.getItem(choices[i]));
+                    }
+                }
+            }
+        }
+    }
+
+    //星星評價
+    const stars=document.querySelector(".rating").children;
+    let ratingValue
+    let index //目前選到的星星
+    document.getElementById("rating-value").innerHTML = "請評分"
+    for(let i=0;i<stars.length;i++){    //i為被選到的星星
+        stars[i].addEventListener("mouseover",function(){
+        //  console.log(i)
+            document.getElementById("rating-value").innerHTML = "正在評分..."
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=i;j++){
+                stars[j].classList.remove("fa-star-o")       //先移除空心的星星
+                stars[j].classList.add("fa-star")        //添加新的星星 如果i=j表示選中的
+            }
+        })
+        stars[i].addEventListener("click",function(){
+            ratingValue=i
+            index=i
+            $('#rating-value').html(ratingValue + '.0') ;
+            var rank = i;
+            localStorage.setItem("小確幸",rank);     //r=幾星
+        })
+        stars[i].addEventListener("mouseout",function(){
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=index;j++){
+                stars[j].classList.remove("fa-star-o")
+                stars[j].classList.add("fa-star")
+            }
+        })
+    }
+</script>
+{% endblock script %}
+
+{% endblock %}

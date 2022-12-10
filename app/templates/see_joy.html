@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h3, h4, label, form {color: white;}
+    #list {color: white;}
+</style>
+{% endblock style %}
+<div class="row">
+    <div class="col-md-5">
+        <h3><b>店家：拾覺SEEJOY TEA (台中嶺東店)</b></h3>
+        <h4>地址：台中市南屯區忠勇路80之15號</h4>
+        <label>菜單查詢：</label><br>
+            <select id="menu" name="drink" size="10" multiple>
+                <optgroup label="季節限定.手工熬煮：">
+                    <option value="蘇打鹹檬七 - 60">蘇打鹹檬七&nbsp-&nbsp60
+                    <option value="古早味綠豆沙 - 40">古早味綠豆沙&nbsp-&nbsp40
+                    <option value="古早味綠豆雪霜 - 50">古早味綠豆雪霜&nbsp-&nbsp50
+                </optgroup>
+                <optgroup label="拾採原萃茶：">
+                    <option value="金萱27 - 30">金萱27&nbsp-&nbsp30
+                    <option value="大麥紅茶 - 30">大麥紅茶&nbsp-&nbsp30
+                    <option value="春摘蜜香紅 - 30">春摘蜜香紅&nbsp-&nbsp30
+                    <option value="煎焙包種綠 - 30">煎焙包種綠&nbsp-&nbsp30
+                    <option value="原萃高山青 - 30">原萃高山青&nbsp-&nbsp30
+                </optgroup>
+                <optgroup label="柴香冬瓜茶：">
+                    <option value="柴香冬瓜茶 - 30">柴香冬瓜茶&nbsp-&nbsp30
+                    <option value="仙草乾茶 - 30">仙草乾茶&nbsp-&nbsp30
+                    <option value="冬瓜清茶 - 40">冬瓜清茶&nbsp-&nbsp40
+                    <option value="冬瓜檸檬 - 45">冬瓜檸檬&nbsp-&nbsp45
+                    <option value="四寶仙草甘 - 50">四寶仙草甘&nbsp-&nbsp50
+                    <option value="四寶冬瓜露 - 50">四寶冬瓜露&nbsp-&nbsp50
+                    <option value="春梅冬露凍飲 - 45">春梅冬露凍飲&nbsp-&nbsp45
+                </optgroup>
+                <optgroup label="乳酪奶蓋系：">
+                    <option value="葡萄乳酪芝芝 - 85">葡萄乳酪芝芝&nbsp-&nbsp85
+                    <option value="蜜桃乳酪芝芝 - 70">蜜桃乳酪芝芝&nbsp-&nbsp70
+                    <option value="乳酪奶蓋茶 (紅/麥/青/萱/綠) - 50">乳酪奶蓋茶&nbsp(紅/麥/青/萱/綠)&nbsp-&nbsp50
+                </optgroup>
+                <optgroup label="復刻古早時光：">
+                    <option value="芭樂檸檬凍飲 (微冰) - 60">芭樂檸檬凍飲&nbsp(微冰)&nbsp-&nbsp60
+                    <option value="芭樂梅凍飲 (微冰) - 60">芭樂梅凍飲&nbsp(微冰)&nbsp-&nbsp60
+                    <option value="春梅綠 - 40">春梅綠&nbsp-&nbsp40
+                    <option value="多多綠 - 50">多多綠&nbsp-&nbsp50
+                    <option value="柳橙金萱 - 60">柳橙金萱&nbsp-&nbsp60
+                    <option value="蜜桃果粒茶 - 60">蜜桃果粒茶&nbsp-&nbsp60
+                    <option value="檸檬綠 (紅/青) - 50">檸檬綠&nbsp(紅/青)&nbsp-&nbsp50
+                    <option value="火山荔枝風味冰茶 - 45">火山荔枝風味冰茶&nbsp-&nbsp45
+                    <option value="小葉金草茶 (金線蓮) - 40">小葉金草茶&nbsp(金線蓮)&nbsp-&nbsp40
+                    <option value="梨山春茶 (現泡茶) - 50">梨山春茶&nbsp(現泡茶)&nbsp-&nbsp50
+                </optgroup>
+                <optgroup label="濃韻厚奶系：">
+                    <option value="雙Q厚奶 - 55">雙Q厚奶&nbsp-&nbsp55
+                    <option value="厚奶三重奏 - 60">厚奶三重奏&nbsp-&nbsp60
+                    <option value="鐵觀音厚奶/經典厚奶 - 50">鐵觀音厚奶/經典厚奶&nbsp-&nbsp50
+                    <option value="奶酪厚奶/杏仁凍厚奶 - 55">奶酪厚奶/杏仁凍厚奶&nbsp-&nbsp55
+                </optgroup>
+                <optgroup label="雲朵鮮奶茶：">
+                    <option value="雙Q拿鐵 - 65">雙Q拿鐵&nbsp-&nbsp65
+                    <option value="拿鐵三重奏 - 70">拿鐵三重奏&nbsp-&nbsp70
+                    <option value="嫩仙草拿鐵 (甜度固定) - 60">嫩仙草拿鐵&nbsp(甜度固定)&nbsp-&nbsp60
+                    <option value="鐵觀音拿鐵/紅茶拿鐵 - 60">鐵觀音拿鐵/紅茶拿鐵&nbsp-&nbsp60
+                    <option value="奶酪拿鐵/杏仁凍拿鐵 - 65">奶酪拿鐵/杏仁凍拿鐵&nbsp-&nbsp65
+                </optgroup>
+            </select>
+          <form id="form1"><br>
+            <label>嚼感自由配&nbsp(1.先選茶)：</label><br>  <!-- 能兩個值value更好 -->
+            <input name="tea" type="radio" value="原味茶 - 40">原味茶&nbsp-&nbsp40
+            <input name="tea" type="radio" value="冬瓜茶 - 40">冬瓜茶&nbsp-&nbsp40
+            <input name="tea" type="radio" value="仙草甘茶 - 40">仙草甘茶&nbsp-&nbsp40
+            <br>
+            <input name="tea" type="radio" value="厚奶茶 - 55">厚奶茶&nbsp-&nbsp55
+            <input name="tea" type="radio" value="紅茶觀音 - 65">紅茶觀音&nbsp-&nbsp65
+            <input name="tea" type="radio" value="觀音拿鐵 - 65">觀音拿鐵&nbsp-&nbsp65
+          </form>
+          <form id="form2"><br>
+            <label>嚼感自由配&nbsp(2.配料6選2)：</label><br>
+            <input class="checktwo" name="item-inner" type="checkbox" value="蜜珍珠">蜜珍珠&nbsp-&nbsp10
+            <input class="checktwo" name="item-inner" type="checkbox" value="仙草凍">仙草凍&nbsp-&nbsp10
+            <input class="checktwo" name="item-inner" type="checkbox" value="QQ粉條">QQ粉條&nbsp-&nbsp10
+            <br>
+            <input class="checktwo" name="item-inner" type="checkbox" value="椰果">椰果&nbsp-&nbsp10
+            <input class="checktwo" name="item-inner" type="checkbox" value="杏仁凍">杏仁凍&nbsp-&nbsp15
+            <input class="checktwo" name="item-inner" type="checkbox" value="蜂蜜檸檬凍">蜂蜜檸檬凍&nbsp-&nbsp10
+          </form>
+    </div>
+
+    <div class="col-md-5">
+        <br>
+        <button id="clear" class="btn btn-primary btn-sm">清除</button>   <!-- ok -->
+        <button id="delete" class="btn btn-primary btn-sm">刪除最後一筆</button>
+        <button id="collect" class="btn btn-primary btn-sm">收藏</button>
+        <div class="rating-box">    <!-- 星星評分 -->
+            <div class="rating">
+                <br>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+            </div>
+            <b><em id="rating-value"></em></b>
+        </div>
+        <hr>
+        <ul id="list"></ul>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.5341487315527!2d120.61439631498904!3d24.15299298439238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e74512975ff%3A0xc407d735e348d61a!2zNDA45Y-w5Lit5biC5Y2X5bGv5Y2A5b-g5YuH6LevODDkuYsyN-iZnw!5e0!3m2!1szh-TW!2stw!4v1654148853328!5m2!1szh-TW!2stw" width="450" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4 style="color: black">{{ current_user.username }}</h4>
+                <h6>頭像</h6>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+    </div>
+</div>
+{% block script %}
+<script>
+    $('.checktwo').on('change', function() {                  // Cheakbox => max 2(6選2)
+        if($('.checktwo:checked').length > 2) {
+            this.checked = false;
+        }
+        });
+    document.addEventListener('DOMContentLoaded', () => {
+        document
+            .getElementById('menu')
+            .addEventListener('input', handleSelect);
+    })
+    function handleSelect(event){
+        let select = event.target;  // document.getElementById('menu');
+        // console.log(select.value);
+        let choices = [];
+        let value = [];
+        for(let i=0;i<select.selectedOptions.length;i++){           // 選幾個印出幾個
+            choices.push(select.selectedOptions[i].value);
+            // var txtNode = document.createTextNode(select.selectedOptions[i].value);
+            list.innerHTML += "<li>" + select.selectedOptions[i].value + "</li>";
+            if (list.children.length==0){
+                break;
+            }else{
+                document.getElementById("delete").onclick =         //刪除最後一筆
+                function(){
+                    $('#list li:last').remove()     //remove
+                }
+                document.getElementById("clear").onclick =
+                function(){
+                    var c = document.getElementById("list");            //c => Clear
+                    c.innerHTML = "";   // 刪除ul的內容(刪除所有li)
+                    // list.innerHTML -= "<li>" + select.selectedOptions[i].value + "</li>";
+                }
+                document.getElementById("collect").onclick =         //收藏
+                function(){
+                    for(let i=0;i<select.selectedOptions.length;i++){
+                        value.push(choices[i].split('-')[0])
+                        localStorage.setItem(choices[i],value[i]);
+                        console.log(localStorage.getItem(choices[i]));
+                    }
+                }
+            }
+        }
+    }
+
+    //星星評價
+    const stars=document.querySelector(".rating").children;
+    let ratingValue
+    let index //目前選到的星星
+    document.getElementById("rating-value").innerHTML = "請評分"
+    for(let i=0;i<stars.length;i++){    //i為被選到的星星
+        stars[i].addEventListener("mouseover",function(){
+        //  console.log(i)
+            document.getElementById("rating-value").innerHTML = "正在評分..."
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=i;j++){
+                stars[j].classList.remove("fa-star-o")       //先移除空心的星星
+                stars[j].classList.add("fa-star")        //添加新的星星 如果i=j表示選中的
+            }
+        })
+        stars[i].addEventListener("click",function(){
+            ratingValue=i
+            index=i
+            $('#rating-value').html(ratingValue + '.0') ;
+            var rank = i;
+            localStorage.setItem("拾覺",rank);     //r=幾星
+        })
+        stars[i].addEventListener("mouseout",function(){
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=index;j++){
+                stars[j].classList.remove("fa-star-o")
+                stars[j].classList.add("fa-star")
+            }
+        })
+    }
+</script>
+{% endblock script %}
+
+{% endblock %}

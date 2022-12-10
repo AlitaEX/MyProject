@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% block style %}
+<style>
+    h3, h4, label, form {color: white;}
+    #list {color: white;}
+</style>
+{% endblock style %}
+<div class="row">
+    <div class="col-md-5">
+        <h3><b>店家：醋頭家True Boss (豐原三民店)</b></h3>
+        <h4>地址：台中市豐原區三民路213號</h4>
+        <label>菜單查詢：</label><br>
+            <select id="menu" name="drink" size="10" multiple>
+                <optgroup label="頭家經典：">
+                    <option value="臺灣四季紅茶 - 25">臺灣四季紅茶&nbsp-&nbsp25
+                    <option value="白毫毛尖綠茶 - 25">白毫毛尖綠茶&nbsp-&nbsp25
+                    <option value="臺灣高山青茶 - 25">臺灣高山青茶&nbsp-&nbsp25
+                    <option value="臺灣鹿谷烏龍茶 - 25">臺灣鹿谷烏龍茶&nbsp-&nbsp25
+                    <option value="頭家鮮奶茶 - 50">頭家鮮奶茶&nbsp-&nbsp50
+                    <option value="經典鮮果茶 - 55">經典鮮果茶&nbsp-&nbsp55
+                    <option value="頭家芝士奶蓋茶 - 50">頭家芝士奶蓋茶&nbsp-&nbsp50
+                    <option value="芝士果果 - 60 (M)">芝士果果&nbsp-&nbsp60 (M)
+                </optgroup>
+                <optgroup label="頂極酵醋：">
+                    <option value="頂極酵醋飲 - 55">頂極酵醋飲&nbsp-&nbsp55
+                    <option value="微酵小紫蘇 - 55">微酵小紫蘇&nbsp-&nbsp55
+                    <option value="波霸愛吃醋 - 65">波霸愛吃醋&nbsp-&nbsp65
+                    <option value="波霸愛吃醋 - 65">波霸愛吃醋&nbsp-&nbsp65
+                    <option value="果果吃酵醋 - 65">果果吃酵醋&nbsp-&nbsp65
+                    <option value="手採鮮茶酵醋 - 55">手採鮮茶酵醋&nbsp-&nbsp55
+                </optgroup>
+                <optgroup label="酵果特調：">
+                    <option value="蜜桃多多 - 65">蜜桃多多&nbsp-&nbsp65
+                    <option value="大橙小蜜 - 60">大橙小蜜&nbsp-&nbsp60
+                    <option value="梅子樂樂 - 60">梅子樂樂&nbsp-&nbsp60
+                    <option value="青梅檸檬 - 60">青梅檸檬&nbsp-&nbsp60
+                    <option value="纖體輕活飲- 65">纖體輕活飲&nbsp-&nbsp65
+                    <option value="美的冒泡 - 60 (M)">美的冒泡&nbsp-&nbsp60 (M)
+                    <option value="酵醋優酪 - 70 (M)">酵醋優酪&nbsp-&nbsp70 (M)
+                    <option value="搖滾雪貝 - 65 (M)">搖滾雪貝&nbsp-&nbsp65 (M)
+                </optgroup>
+                <optgroup label="頭家特調：">
+                    <option value="黑糖青檸 - 35">黑糖青檸&nbsp-&nbsp35
+                    <option value="黑糖鮮奶 - 60 (M)">黑糖鮮奶&nbsp-&nbsp60 (M)
+                    <option value="黑糖波霸鮮奶 - 70">黑糖波霸鮮奶&nbsp-&nbsp70
+                    <option value="芋泥香芋 - 65 (M)">芋泥香芋&nbsp-&nbsp65 (M)
+                    <option value="綠茶多多 - 45">綠茶多多&nbsp-&nbsp45
+                    <option value="檸檬冬冬 - 65">檸檬冬冬&nbsp-&nbsp65
+                    <option value="甘蔗青茶 - 55">甘蔗青茶&nbsp-&nbsp55
+                    <option value="甘蔗檸檬 - 55">甘蔗檸檬&nbsp-&nbsp55
+                    <option value="桂圓紅棗 - 65">桂圓紅棗&nbsp-&nbsp65
+                </optgroup>
+                <optgroup label="頭家黑萃：">
+                    <option value="酵醋黑萃 - 68 (M)">酵醋黑萃&nbsp-&nbsp68 (M)
+                    <option value="美式咖啡 - 50 (M)">美式咖啡&nbsp-&nbsp50 (M)
+                    <option value="拿鐵咖啡 - 68 (M)">拿鐵咖啡&nbsp-&nbsp68 (M)
+                </optgroup>
+                <optgroup label="冬季限定：">
+                    <option value="薑薑好茶 - 50 (M)">薑薑好茶&nbsp-&nbsp50 (M)
+                    <option value="薑薑撞奶 - 70 (M)">薑薑撞奶&nbsp-&nbsp70 (M)
+                </optgroup>
+            </select>
+        <form id="form1"><br>
+            <label>+10：</label><br>
+            <input name="item-inner" type="radio" value="酵醋">酵醋
+            <input name="item-inner" type="radio" value="鮮果">鮮果
+            <input name="item-inner" type="radio" value="紫蘇">紫蘇
+            <input name="item-inner" type="radio" value="波霸">波霸
+            <input name="item-inner" type="radio" value="芋頭">芋頭
+        </form>
+        <form id="form2"><br>
+            <label>+15：</label><br>
+            <input name="item-inner" type="radio" value="芝士奶蓋">芝士奶蓋
+            <input name="item-inner" type="radio" value="芋圓">芋圓
+        </form>
+        <form id="form3"><br>
+            <label>+20：</label><br>
+            <input name="item-inner" type="radio" value="蘆薈">蘆薈
+        </form>
+        <form id="form4"><br>
+            <label>甜度：</label><br>
+            <input name="sweet" type="radio" value="無糖">無糖
+          </form>
+        <form id="form5"><br>
+            <label>冰塊：</label><br>
+            <input name="ice" type="radio" value="正常冰">正常冰
+            <input name="ice" type="radio" value="少冰">少冰
+            <input name="ice" type="radio" value="去冰">去冰
+            <input name="ice" type="radio" value="完全去冰">完全去冰
+        </form>
+    </div>
+
+    <div class="col-md-5">
+        <br>
+        <button id="clear" class="btn btn-primary btn-sm">清除</button>   <!-- ok -->
+        <button id="delete" class="btn btn-primary btn-sm">刪除最後一筆</button>
+        <button id="collect" class="btn btn-primary btn-sm">收藏</button>
+        <div class="rating-box">    <!-- 星星評分 -->
+            <div class="rating">
+                <br>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+                <span class="fa fa-star-o"></span>
+            </div>
+            <b><em id="rating-value"></em></b>
+        </div>
+        <hr>
+        <ul id="list"></ul>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.6803374711044!2d120.71454831499085!3d24.252956684344113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691a08c6b55b95%3A0xb2bbcd7c09065ae0!2z6YaL6aCt5a62IFRydWUgQm9zcyDosZDljp_kuInmsJHlupc!5e0!3m2!1szh-TW!2stw!4v1653849121961!5m2!1szh-TW!2stw" width="450" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="col-md-2">  <!-- col-md-offset-4 向右移4個單位 -->
+          <div class="thumbnail text-center">
+            <br>
+            <img src="{{ current_user.avatar_img }}" alt="avatar" width="100px">
+              <div class="caption">
+                <h4 style="color: black">{{ current_user.username }}</h4>
+                <h6>頭像</h6>
+                  <p>
+                    <a href="{{ url_for('collection') }}" class="btn btn-success" role="button">收藏</a>
+                    <a href="{{ url_for('edit_profile') }}" class="btn btn-primary" role="button">編輯</a>
+                  </p>
+              </div>
+          </div>
+    </div>
+</div>
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document
+            .getElementById('menu')
+            .addEventListener('input', handleSelect);
+    })
+    function handleSelect(event){
+        let select = event.target;  // document.getElementById('menu');
+        // console.log(select.value);
+        let choices = [];
+        let value = [];
+        for(let i=0;i<select.selectedOptions.length;i++){           // 選幾個印出幾個
+            choices.push(select.selectedOptions[i].value);
+            // var txtNode = document.createTextNode(select.selectedOptions[i].value);
+            list.innerHTML += "<li>" + select.selectedOptions[i].value + "</li>";
+            if (list.children.length==0){
+                break;
+            }else{
+                document.getElementById("delete").onclick =         //刪除最後一筆
+                function(){
+                    $('#list li:last').remove()     //remove
+                }
+                document.getElementById("clear").onclick =
+                function(){
+                    var c = document.getElementById("list");            //c => Clear
+                    c.innerHTML = "";   // 刪除ul的內容(刪除所有li)
+                    // list.innerHTML -= "<li>" + select.selectedOptions[i].value + "</li>";
+                }
+                document.getElementById("collect").onclick =         //收藏
+                function(){
+                    for(let i=0;i<select.selectedOptions.length;i++){
+                        value.push(choices[i].split('-')[0])
+                        localStorage.setItem(choices[i],value[i]);
+                        console.log(localStorage.getItem(choices[i]));
+                    }
+                }
+            }
+        }
+    }
+
+    //星星評價
+    const stars=document.querySelector(".rating").children;
+    let ratingValue
+    let index //目前選到的星星
+    document.getElementById("rating-value").innerHTML = "請評分"
+    for(let i=0;i<stars.length;i++){    //i為被選到的星星
+        stars[i].addEventListener("mouseover",function(){
+        //  console.log(i)
+            document.getElementById("rating-value").innerHTML = "正在評分..."
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=i;j++){
+                stars[j].classList.remove("fa-star-o")       //先移除空心的星星
+                stars[j].classList.add("fa-star")        //添加新的星星 如果i=j表示選中的
+            }
+        })
+        stars[i].addEventListener("click",function(){
+            ratingValue=i
+            index=i
+            $('#rating-value').html(ratingValue + '.0') ;
+            var rank = i;
+            localStorage.setItem("醋頭家",rank);     //r=幾星
+        })
+        stars[i].addEventListener("mouseout",function(){
+            for(let j=0;j<stars.length;j++){
+                stars[j].classList.remove("fa-star")     //reset 所有星星
+                stars[j].classList.add("fa-star-o")
+            }
+            for(let j=0;j<=index;j++){
+                stars[j].classList.remove("fa-star-o")
+                stars[j].classList.add("fa-star")
+            }
+        })
+    }
+</script>
+{% endblock script %}
+
+{% endblock %}

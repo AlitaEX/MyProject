@@ -1,0 +1,10 @@
+flask~=2.2.2
+flask-bootstrap
+flask-bcrypt
+flask-login
+flask-mail
+flask-sqlalchemy
+flask-wtf
+PyJWT~=2.5.0
+wtforms~=3.0.1
+Werkzeug~=2.2.2
