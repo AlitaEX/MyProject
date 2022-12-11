@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from config import Config
 
-app = Flask(__name__)
+app = Flask(__name__)   # (template_folder='./')設定 templates 資料夾位置就是當前執行檔
 app.config.from_object(Config)  # 重要 一定要在SQLALCHEMY實例化對像前面
 
 bootstrap = Bootstrap(app)
