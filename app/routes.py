@@ -93,7 +93,7 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/send_password_reset_request', methods=['GET', 'POST'])
+@app.route('/reset_password_request', methods=['GET', 'POST'])
 def send_password_reset_request():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
