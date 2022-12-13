@@ -21,4 +21,3 @@ login.login_message = '請先登入'
 login.login_message_category = 'Info'
 
 from app.routes import *
-from app import run

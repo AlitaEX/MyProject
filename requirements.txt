@@ -8,4 +8,5 @@ flask-wtf
 PyJWT~=2.5.0
 wtforms~=3.0.1
 Werkzeug~=2.2.2
+email_validator
 waitress
