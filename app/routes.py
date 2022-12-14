@@ -18,18 +18,19 @@ def allowed_file(filename):
 
 # 推薦
 @app.route('/recommend')
+@login_required
 def recommend():
     return render_template('recommend.html')
 
 
 @app.route("/")
-@login_required
 def index():
     # count_collection = len(current_user.collection), count_collection=count_collection
     return render_template('index.html')
 
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
+@login_required
 def edit_profile():
     form = UploadPhotoForm()
     if form.validate_on_submit():
